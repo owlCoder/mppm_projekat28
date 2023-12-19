@@ -160,7 +160,8 @@ namespace MVVM3.ViewModel
                         Properties = new ObservableCollection<ModelCode>(
                             MainWindowViewModel.modelResourcesDesc.GetAllPropertyIds(SelectedType));
                         SelectedModels.Clear();
-                        Show = Visibility.Visible;
+                        SelectedGid = -1;
+                        ListedProperties.Clear();
                     }
                     catch 
                     { 
