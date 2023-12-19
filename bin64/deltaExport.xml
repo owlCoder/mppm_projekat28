@@ -1,0 +1,60 @@
+﻿<delta id="0">
+  <operations>
+    <operation type="insert">
+      <ResourceDescriptions count="4">
+        <ResourceDescription>
+          <id gid="0x00000007ffffffff" type="REGULATINGCONTROL" />
+          <Properties>
+            <Property id="IDOBJ_ALIASNAME" value="RC1" />
+            <Property id="IDOBJ_MRID" value="REGCONTROL_12345678" />
+            <Property id="IDOBJ_NAME" value="RegControl1" />
+            <Property id="REGCTRL_DISCRETE" value="1" />
+            <Property id="REGCTRL_MODE" value="activePower" />
+            <Property id="REGCTRL_MONITPHASE" value="ABC" />
+            <Property id="REGCTRL_TARGRANGE" value="5" />
+            <Property id="REGCTRL_TARG_VALUE" value="120" />
+          </Properties>
+        </ResourceDescription>
+        <ResourceDescription>
+          <id gid="0x00000007fffffffe" type="REGULATINGCONTROL" />
+          <Properties>
+            <Property id="IDOBJ_ALIASNAME" value="RC2" />
+            <Property id="IDOBJ_MRID" value="REGCONTROL_23456789" />
+            <Property id="IDOBJ_NAME" value="RegControl2" />
+            <Property id="REGCTRL_DISCRETE" value="0" />
+            <Property id="REGCTRL_MODE" value="currentFlow" />
+            <Property id="REGCTRL_MONITPHASE" value="AC" />
+            <Property id="REGCTRL_TARGRANGE" value="10" />
+            <Property id="REGCTRL_TARG_VALUE" value="240" />
+          </Properties>
+        </ResourceDescription>
+        <ResourceDescription>
+          <id gid="0x00000007fffffffd" type="REGULATINGCONTROL" />
+          <Properties>
+            <Property id="IDOBJ_ALIASNAME" value="RC3" />
+            <Property id="IDOBJ_MRID" value="REGCONTROL_34567890" />
+            <Property id="IDOBJ_NAME" value="RegControl3" />
+            <Property id="REGCTRL_DISCRETE" value="1" />
+            <Property id="REGCTRL_MODE" value="voltage" />
+            <Property id="REGCTRL_MONITPHASE" value="B" />
+            <Property id="REGCTRL_TARGRANGE" value="15" />
+            <Property id="REGCTRL_TARG_VALUE" value="360" />
+          </Properties>
+        </ResourceDescription>
+        <ResourceDescription>
+          <id gid="0x00000007fffffffc" type="REGULATINGCONTROL" />
+          <Properties>
+            <Property id="IDOBJ_ALIASNAME" value="RC4" />
+            <Property id="IDOBJ_MRID" value="REGCONTROL_45678901" />
+            <Property id="IDOBJ_NAME" value="RegControl4" />
+            <Property id="REGCTRL_DISCRETE" value="0" />
+            <Property id="REGCTRL_MODE" value="activePower" />
+            <Property id="REGCTRL_MONITPHASE" value="ABCN" />
+            <Property id="REGCTRL_TARGRANGE" value="8" />
+            <Property id="REGCTRL_TARG_VALUE" value="180" />
+          </Properties>
+        </ResourceDescription>
+      </ResourceDescriptions>
+    </operation>
+  </operations>
+</delta>
