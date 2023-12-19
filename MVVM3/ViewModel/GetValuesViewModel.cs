@@ -1,6 +1,8 @@
 ﻿using FTN.Common;
 using MVVM3.Commands;
 using MVVM3.Helpers;
+using MVVM3.Model;
+using MVVMLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,12 +14,15 @@ namespace MVVM3.ViewModel
     public class GetValuesViewModel : BindableBase
     {
         public MyICommand ClearProperties {  get; set; }
+        public MyICommand ResetAll {  get; set; }
+        public MyICommand GetValuesCriteria {  get; set; }
         private Visibility show;
         private GetValuesCommands commands = new GetValuesCommands();
 
         private List<DMSType> types = new List<DMSType>();
         private ObservableCollection<long> gids = new ObservableCollection<long>();
         private ObservableCollection<ModelCode> properties = new ObservableCollection<ModelCode>();
+        private ObservableCollection<PropertyView> listedProperties = new ObservableCollection<PropertyView>();
 
         private DMSType selectedType;
         private long selectedGid = -1;
@@ -38,12 +43,58 @@ namespace MVVM3.ViewModel
             SelectedModels = new ObservableCollection<ModelCode>();
 
             ClearProperties = new MyICommand(ClearPropertiesCollection);
+            ResetAll = new MyICommand(ResetAllForm);
+            GetValuesCriteria = new MyICommand(GetValuesFromNMSCriteria);
             Show = Visibility.Hidden;
         }
 
         private void ClearPropertiesCollection() 
         {
             SelectedModels.Clear();
+        }
+
+        private void ResetAllForm()
+        {
+            SelectedModels.Clear();
+            SelectedType = (DMSType)1;
+            SelectedGid = -1;
+            ListedProperties.Clear();
+            Messenger.Default.Send(new StatusMessage("Criteria has been resetted.", "SteelBlue"));
+        }
+
+        public void GetValuesFromNMSCriteria()
+        {
+            if(SelectedType == DMSType.MASK_TYPE)
+            {
+                Messenger.Default.Send(new StatusMessage("You didn't choose a DMS type!", "Crimson"));
+                return;
+            }
+            if(SelectedGid == -1)
+            {
+                Messenger.Default.Send(new StatusMessage("You didn't choose a Global ID!", "Crimson"));
+                return;
+            }
+            if(SelectedModels.Count == 0)
+            {
+                Messenger.Default.Send(new StatusMessage("You must choose atleast one property!", "Crimson"));
+                return;
+            }
+
+            Messenger.Default.Send(new StatusMessage("Executing query. Please wait...", "CadetBlue"));
+            ListedProperties = commands.GetValues(selectedGid, SelectedModels.ToList());
+        }
+
+        public ObservableCollection<PropertyView> ListedProperties
+        {
+            get => listedProperties;
+            set
+            {
+                if(value != listedProperties)
+                {
+                    listedProperties = value;
+                    OnPropertyChanged("ListedProperties");
+                }
+            }
         }
 
         public Visibility Show
@@ -69,8 +120,10 @@ namespace MVVM3.ViewModel
             {
                 foreach (ModelCode model in value)
                 {
-                    if(!SelectedModels.Contains(model))
+                    if (!SelectedModels.Contains(model))
+                    {
                         SelectedModels.Add(model);
+                    }
                 }
             }
         }
@@ -80,8 +133,12 @@ namespace MVVM3.ViewModel
             get => types;
             set
             {
-                types = value;
-                OnPropertyChanged("Types");
+                if(types != value)
+                {
+                    types = value;
+                    OnPropertyChanged("Types");
+                }
+                
             }
         }
 
@@ -125,6 +182,7 @@ namespace MVVM3.ViewModel
                 if (selectedGid != value)
                 {
                     selectedGid = value;
+                    ListedProperties.Clear();
                     OnPropertyChanged("SelectedGid");
                 }
             }

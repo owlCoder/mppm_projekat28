@@ -5,6 +5,7 @@ using MVVMLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MVVM3.Commands
 {
@@ -51,7 +52,7 @@ namespace MVVM3.Commands
 
                 Proxy.IteratorClose(iteratorId);
 
-                Messenger.Default.Send(new StatusMessage("Getting extent values for " + modelCode + " method successfully finished. Fetched " + ids.Count + " samples.", "DarkGreen"));
+                Messenger.Default.Send(new StatusMessage("Getting extent values for " + modelCode + " method successfully finished. Fetched " + ids.Count + " samples.", "SeaGreen"));
             }
             catch (Exception e)
             {
@@ -62,6 +63,45 @@ namespace MVVM3.Commands
             ObservableCollection<long> gids = new ObservableCollection<long>(ids);
 
             return gids;
+        }
+
+        // Method to get by values
+        public ObservableCollection<PropertyView> GetValues(long globalId, List<ModelCode> props)
+        {
+            try
+            {
+                ResourceDescription rd = Proxy.GetValues(globalId, props);
+                ObservableCollection<PropertyView> data = new ObservableCollection<PropertyView>();
+
+                foreach (Property p in rd.Properties)
+                {
+                    if (p.Type == PropertyType.ReferenceVector)
+                    {
+                        if (p.AsReferences().Count == 0)
+                        {
+                            data.Add(new PropertyView(p.Id, "Not referenced"));
+                        }
+                        else
+                        {
+                            data.Add(new PropertyView(p.Id, "Referenced to other entities"));
+                        }
+                    }
+                    else
+                    {
+                        data.Add(new PropertyView(p.Id, p.ToString()));
+                    }
+                }
+
+                Messenger.Default.Send(new StatusMessage("Get values method fetched " + data.Count + " " +
+                                                         (data.Count <= 1 ? "property" : "properties") + " from service.", "CadetBlue"));
+
+                return data;
+            }
+            catch (Exception)
+            {
+                Messenger.Default.Send(new StatusMessage("Service can't fetch values right now!", "Crimson"));
+                return new ObservableCollection<PropertyView>();
+            }
         }
     }
 }

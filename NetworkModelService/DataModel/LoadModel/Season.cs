@@ -72,8 +72,6 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
 
         public override void SetProperty(Property property)
         {
-            // glupane danijele ne znas basic stvari napisati retarde
-            // base.SetProperty(property);
             switch (property.Id)
             {
                 case ModelCode.SEASON_END_DATE:
