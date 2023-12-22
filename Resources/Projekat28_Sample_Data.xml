@@ -1,0 +1,220 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
+         xmlns:ftn="http://www.ftnydro.com/CIM15/2010/extension#">
+
+    <!-- Season - Spring 2024 -->
+    <cim:Season rdf:ID="S_12345678">
+        <cim:IdentifiedObject.name>Spring</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.mRID>S_12345678</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>Spring 2024</cim:IdentifiedObject.aliasName>
+        <cim:Season.startDate>2024-03-20T00:00:00</cim:Season.startDate>
+        <cim:Season.endDate>2024-06-20T23:59:59</cim:Season.endDate>
+    </cim:Season>
+
+    <!-- Season - Summer 2024 -->
+    <cim:Season rdf:ID="S_87654321">
+        <cim:IdentifiedObject.name>Summer</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.mRID>S_87654321</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>Summer 2024</cim:IdentifiedObject.aliasName>
+        <cim:Season.startDate>2024-06-21T00:00:00</cim:Season.startDate>
+        <cim:Season.endDate>2024-09-22T23:59:59</cim:Season.endDate>
+    </cim:Season>
+
+    <!-- Season - Autumn 2024 -->
+    <cim:Season rdf:ID="S_23456789">
+        <cim:IdentifiedObject.name>Autumn</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.mRID>S_23456789</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>Autumn 2024</cim:IdentifiedObject.aliasName>
+        <cim:Season.startDate>2024-09-23T00:00:00</cim:Season.startDate>
+        <cim:Season.endDate>2024-12-20T23:59:59</cim:Season.endDate>
+    </cim:Season>
+
+    <!-- Season - Winter 2024 -->
+    <cim:Season rdf:ID="S_34567890">
+        <cim:IdentifiedObject.name>Winter</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.mRID>S_34567890</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>Winter 2024</cim:IdentifiedObject.aliasName>
+        <cim:Season.startDate>2024-12-21T00:00:00</cim:Season.startDate>
+        <cim:Season.endDate>2025-03-19T23:59:59</cim:Season.endDate>
+    </cim:Season>
+
+     <!-- DayType - Weekday -->
+    <cim:DayType rdf:ID="DT_12345678">
+        <cim:IdentifiedObject.mRID>DT_12345678</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>Weekday</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>Weekday</cim:IdentifiedObject.aliasName>
+    </cim:DayType>
+
+    <!-- DayType - Weekend -->
+    <cim:DayType rdf:ID="DT_87654321">
+        <cim:IdentifiedObject.mRID>DT_87654321</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>Weekend</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>Weekend</cim:IdentifiedObject.aliasName>
+    </cim:DayType>
+
+    <!-- DayType - Holiday -->
+    <cim:DayType rdf:ID="DT_23456789">
+        <cim:IdentifiedObject.mRID>DT_23456789</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>Holiday</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>Holiday</cim:IdentifiedObject.aliasName>
+    </cim:DayType>
+
+    <!-- DayType - Special -->
+    <cim:DayType rdf:ID="DT_34567890">
+        <cim:IdentifiedObject.mRID>DT_34567890</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>Special</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>Special</cim:IdentifiedObject.aliasName>
+    </cim:DayType>
+
+    <!-- RegularTimePoint - Instance 1 -->
+    <cim:RegularTimePoint rdf:ID="RTP_12345678">
+        <cim:IdentifiedObject.mRID>RTP_12345678</cim:IdentifiedObject.mRID>
+        <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>10.5</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>20.7</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+
+    <!-- RegularTimePoint - Instance 2 -->
+    <cim:RegularTimePoint rdf:ID="RTP_87654321">
+        <cim:IdentifiedObject.mRID>RTP_87654321</cim:IdentifiedObject.mRID>
+        <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>15.2</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>25.9</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+
+    <!-- RegularTimePoint - Instance 3 -->
+    <cim:RegularTimePoint rdf:ID="RTP_98765432">
+        <cim:IdentifiedObject.mRID>RTP_98765432</cim:IdentifiedObject.mRID>
+        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>18.3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>28.6</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+
+    <!-- RegularTimePoint - Instance 4 -->
+    <cim:RegularTimePoint rdf:ID="RTP_23456789">
+        <cim:IdentifiedObject.mRID>RTP_23456789</cim:IdentifiedObject.mRID>
+        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>22.1</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>32.4</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+
+     <!-- Fuse Instance -->
+    <cim:Fuse rdf:ID="FUSE_12345678">
+        <cim:IdentifiedObject.mRID>FUSE_12345678</cim:IdentifiedObject.mRID>
+        <cim:Fuse.aggregate>true</cim:Fuse.aggregate>
+        <cim:Fuse.normallyInService>true</cim:Fuse.normallyInService>
+        <cim:Fuse.normalOpen>false</cim:Fuse.normalOpen>
+        <cim:Fuse.ratedCurrent>1000</cim:Fuse.ratedCurrent>
+        <cim:Fuse.retained>false</cim:Fuse.retained>
+        <cim:Fuse.switchOnCount>5</cim:Fuse.switchOnCount>
+        <cim:Fuse.switchOnDate>2023-12-19T08:00:00Z</cim:Fuse.switchOnDate>
+    </cim:Fuse>
+
+    <!-- Disconnector Instance 1 -->
+    <cim:Disconnector rdf:ID="DISCONNECTOR_11111111">
+        <cim:IdentifiedObject.mRID>DISCONNECTOR_11111111</cim:IdentifiedObject.mRID>
+        <cim:Disconnector.aggregate>false</cim:Disconnector.aggregate>
+        <cim:Disconnector.normallyInService>true</cim:Disconnector.normallyInService>
+        <cim:Disconnector.normalOpen>false</cim:Disconnector.normalOpen>
+        <cim:Disconnector.ratedCurrent>1500</cim:Disconnector.ratedCurrent>
+        <cim:Disconnector.retained>true</cim:Disconnector.retained>
+        <cim:Disconnector.switchOnCount>3</cim:Disconnector.switchOnCount>
+        <cim:Disconnector.switchOnDate>2023-12-20T10:30:00Z</cim:Disconnector.switchOnDate>
+    </cim:Disconnector>
+
+    <!-- Disconnector Instance 2 -->
+    <cim:Disconnector rdf:ID="DISCONNECTOR_22222222">
+        <cim:IdentifiedObject.mRID>DISCONNECTOR_22222222</cim:IdentifiedObject.mRID>
+        <cim:Disconnector.aggregate>true</cim:Disconnector.aggregate>
+        <cim:Disconnector.normallyInService>false</cim:Disconnector.normallyInService>
+        <cim:Disconnector.normalOpen>true</cim:Disconnector.normalOpen>
+        <cim:Disconnector.ratedCurrent>2000</cim:Disconnector.ratedCurrent>
+        <cim:Disconnector.retained>false</cim:Disconnector.retained>
+        <cim:Disconnector.switchOnCount>7</cim:Disconnector.switchOnCount>
+        <cim:Disconnector.switchOnDate>2023-12-21T13:45:00Z</cim:Disconnector.switchOnDate>
+    </cim:Disconnector>
+
+    <!-- Disconnector Instance 3 -->
+    <cim:Disconnector rdf:ID="DISCONNECTOR_33333333">
+        <cim:IdentifiedObject.mRID>DISCONNECTOR_33333333</cim:IdentifiedObject.mRID>
+        <cim:Disconnector.aggregate>true</cim:Disconnector.aggregate>
+        <cim:Disconnector.normallyInService>true</cim:Disconnector.normallyInService>
+        <cim:Disconnector.normalOpen>false</cim:Disconnector.normalOpen>
+        <cim:Disconnector.ratedCurrent>1800</cim:Disconnector.ratedCurrent>
+        <cim:Disconnector.retained>false</cim:Disconnector.retained>
+        <cim:Disconnector.switchOnCount>5</cim:Disconnector.switchOnCount>
+        <cim:Disconnector.switchOnDate>2023-12-22T15:00:00Z</cim:Disconnector.switchOnDate>
+    </cim:Disconnector>
+
+    <!-- Disconnector Instance 4 -->
+    <cim:Disconnector rdf:ID="DISCONNECTOR_44444444">
+        <cim:IdentifiedObject.mRID>DISCONNECTOR_44444444</cim:IdentifiedObject.mRID>
+        <cim:Disconnector.aggregate>false</cim:Disconnector.aggregate>
+        <cim:Disconnector.normallyInService>false</cim:Disconnector.normallyInService>
+        <cim:Disconnector.normalOpen>true</cim:Disconnector.normalOpen>
+        <cim:Disconnector.ratedCurrent>2500</cim:Disconnector.ratedCurrent>
+        <cim:Disconnector.retained>true</cim:Disconnector.retained>
+        <cim:Disconnector.switchOnCount>9</cim:Disconnector.switchOnCount>
+        <cim:Disconnector.switchOnDate>2023-12-23T18:20:00Z</cim:Disconnector.switchOnDate>
+    </cim:Disconnector>
+
+    <!-- Disconnector Instance 5 -->
+    <cim:Disconnector rdf:ID="DISCONNECTOR_55555555">
+        <cim:IdentifiedObject.mRID>DISCONNECTOR_55555555</cim:IdentifiedObject.mRID>
+        <cim:Disconnector.aggregate>true</cim:Disconnector.aggregate>
+        <cim:Disconnector.normallyInService>true</cim:Disconnector.normallyInService>
+        <cim:Disconnector.normalOpen>false</cim:Disconnector.normalOpen>
+        <cim:Disconnector.ratedCurrent>2200</cim:Disconnector.ratedCurrent>
+        <cim:Disconnector.retained>false</cim:Disconnector.retained>
+        <cim:Disconnector.switchOnCount>6</cim:Disconnector.switchOnCount>
+        <cim:Disconnector.switchOnDate>2023-12-24T20:45:00Z</cim:Disconnector.switchOnDate>
+    </cim:Disconnector>
+
+    <!-- RegulatingControl Instance -->
+    <cim:RegulatingControl rdf:ID="REGCONTROL_12345678">
+        <cim:IdentifiedObject.mRID>REGCONTROL_12345678</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>RC1</cim:IdentifiedObject.aliasName>
+        <cim:IdentifiedObject.name>RegControl1</cim:IdentifiedObject.name>
+        <cim:RegulatingControl.discrete>true</cim:RegulatingControl.discrete>
+        <cim:RegulatingControl.mode>activePower</cim:RegulatingControl.mode>
+        <cim:RegulatingControl.monitoredPhase>ABC</cim:RegulatingControl.monitoredPhase>
+        <cim:RegulatingControl.targetRange>5.0</cim:RegulatingControl.targetRange>
+        <cim:RegulatingControl.targetValue>120.0</cim:RegulatingControl.targetValue>
+    </cim:RegulatingControl>
+
+     <!-- RegulatingControl Instance 2 -->
+    <cim:RegulatingControl rdf:ID="REGCONTROL_23456789">
+        <cim:IdentifiedObject.mRID>REGCONTROL_23456789</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>RC2</cim:IdentifiedObject.aliasName>
+        <cim:IdentifiedObject.name>RegControl2</cim:IdentifiedObject.name>
+        <cim:RegulatingControl.discrete>false</cim:RegulatingControl.discrete>
+        <cim:RegulatingControl.mode>currentFlow</cim:RegulatingControl.mode>
+        <cim:RegulatingControl.monitoredPhase>AC</cim:RegulatingControl.monitoredPhase>
+        <cim:RegulatingControl.targetRange>10.0</cim:RegulatingControl.targetRange>
+        <cim:RegulatingControl.targetValue>240.0</cim:RegulatingControl.targetValue>
+    </cim:RegulatingControl>
+
+    <!-- RegulatingControl Instance 3 -->
+    <cim:RegulatingControl rdf:ID="REGCONTROL_34567890">
+        <cim:IdentifiedObject.mRID>REGCONTROL_34567890</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>RC3</cim:IdentifiedObject.aliasName>
+        <cim:IdentifiedObject.name>RegControl3</cim:IdentifiedObject.name>
+        <cim:RegulatingControl.discrete>true</cim:RegulatingControl.discrete>
+        <cim:RegulatingControl.mode>voltage</cim:RegulatingControl.mode>
+        <cim:RegulatingControl.monitoredPhase>B</cim:RegulatingControl.monitoredPhase>
+        <cim:RegulatingControl.targetRange>15.0</cim:RegulatingControl.targetRange>
+        <cim:RegulatingControl.targetValue>360.0</cim:RegulatingControl.targetValue>
+    </cim:RegulatingControl>
+
+    <!-- RegulatingControl Instance 4 -->
+    <cim:RegulatingControl rdf:ID="REGCONTROL_45678901">
+        <cim:IdentifiedObject.mRID>REGCONTROL_45678901</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.aliasName>RC4</cim:IdentifiedObject.aliasName>
+        <cim:IdentifiedObject.name>RegControl4</cim:IdentifiedObject.name>
+        <cim:RegulatingControl.discrete>false</cim:RegulatingControl.discrete>
+        <cim:RegulatingControl.mode>activePower</cim:RegulatingControl.mode>
+        <cim:RegulatingControl.monitoredPhase>ABCN</cim:RegulatingControl.monitoredPhase>
+        <cim:RegulatingControl.targetRange>8.0</cim:RegulatingControl.targetRange>
+        <cim:RegulatingControl.targetValue>180.0</cim:RegulatingControl.targetValue>
+    </cim:RegulatingControl>
+</rdf:RDF>

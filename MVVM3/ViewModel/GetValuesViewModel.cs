@@ -16,7 +16,6 @@ namespace MVVM3.ViewModel
         public MyICommand ClearProperties {  get; set; }
         public MyICommand ResetAll {  get; set; }
         public MyICommand GetValuesCriteria {  get; set; }
-        private Visibility show;
         private GetValuesCommands commands = new GetValuesCommands();
 
         private List<DMSType> types = new List<DMSType>();
@@ -45,7 +44,6 @@ namespace MVVM3.ViewModel
             ClearProperties = new MyICommand(ClearPropertiesCollection);
             ResetAll = new MyICommand(ResetAllForm);
             GetValuesCriteria = new MyICommand(GetValuesFromNMSCriteria);
-            Show = Visibility.Hidden;
         }
 
         private void ClearPropertiesCollection() 
@@ -93,19 +91,6 @@ namespace MVVM3.ViewModel
                 {
                     listedProperties = value;
                     OnPropertyChanged("ListedProperties");
-                }
-            }
-        }
-
-        public Visibility Show
-        {
-            get => show;
-            set
-            {
-                if(show != value)
-                {
-                    show = value;
-                    OnPropertyChanged("Show");
                 }
             }
         }
