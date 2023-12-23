@@ -140,7 +140,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (referenceId)
             {
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REG_SCHDL_REGCTRL:
                     regulationSchedules.Add(globalId);
                     break;
 

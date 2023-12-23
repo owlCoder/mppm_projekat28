@@ -88,7 +88,7 @@
         <cim:BasicIntervalSchedule.value2Multiplier>m</cim:BasicIntervalSchedule.value2Multiplier>
         <cim:BasicIntervalSchedule.value2Unit>V</cim:BasicIntervalSchedule.value2Unit>
         <cim:SeasonDayTypeSchedule.Season rdf:resource="S_12345678" />
-        <!-- <cim:RegulationSchedule.RegulatingControl rdf:resource="REGCONTROL_12345678" /> -->
+        <cim:RegulationSchedule.RegulatingControl rdf:resource="REGCONTROL_12345678" />
     </cim:RegulationSchedule>
 
      <!-- RegularTimePoint Instance 1 -->
@@ -99,7 +99,7 @@
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>10.5</cim:RegularTimePoint.value1>
         <cim:RegularTimePoint.value2>20.3</cim:RegularTimePoint.value2>
-        <!-- <cim:RegularTimePoint.IntervalSchedule rdf:resource="RS_1" /> -->
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RS_1" />
     </cim:RegularTimePoint>
 
     <!-- RegularTimePoint Instance 2 -->

@@ -82,7 +82,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             switch (referenceId)
             {
-                case ModelCode.DAYTYPE_SDTSCHDLS:
+                case ModelCode.SEASONDTSCHDL_DAYTYPE:
                     seasonDayTypeSchedules.Add(globalId);
                     break;
 

@@ -82,7 +82,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (referenceId)
             {
-                case ModelCode.REGINTSCHDL_TPOINTS:
+                case ModelCode.REGTIMEPNT_INT_SCHDL:
                     timePoints.Add(globalId);
                     break;
 
