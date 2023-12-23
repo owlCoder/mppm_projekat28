@@ -23,7 +23,7 @@ namespace MVVM3.Commands
         // Method to get gids per dms model code
         public ObservableCollection<long> GetGIDs(DMSType modelCode)
         {
-            Messenger.Default.Send(new StatusMessage("Getting extent values method started", "CadetBlue"));
+            Messenger.Default.Send(new StatusMessage("Getting global identificators method started", "CadetBlue"));
 
             int iteratorId = 0;
             List<long> ids = new List<long>();

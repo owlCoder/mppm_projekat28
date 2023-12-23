@@ -15,9 +15,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <!-- Left Column -->
             <ColumnDefinition Width="2*"/>
-            <!-- Right Column -->
         </Grid.ColumnDefinitions>
 
         <!-- Left Column -->
