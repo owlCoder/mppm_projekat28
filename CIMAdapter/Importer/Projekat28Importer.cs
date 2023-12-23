@@ -89,13 +89,13 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
 			LogManager.Log("Loading elements and creating delta...", LogLevel.Info);
 
             //// import all concrete model types (DMSType enum)
-            ImportRegulatingControls();
+            ImportSeasons();
+            ImportDayTypes();
             ImportRegulationSchedules();
+            ImportRegulatingControls();
             ImportFuses();
             ImportDisconnectors();
             ImportRegularTimePoints();
-            ImportSeasons();
-            ImportDayTypes();
 
 			LogManager.Log("Loading elements and creating delta completed.", LogLevel.Info);
 		}
