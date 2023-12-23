@@ -66,36 +66,48 @@
         <cim:IdentifiedObject.aliasName>Special</cim:IdentifiedObject.aliasName>
     </cim:DayType>
 
-    <!-- RegularTimePoint - Instance 1 -->
-    <cim:RegularTimePoint rdf:ID="RTP_12345678">
-        <cim:IdentifiedObject.mRID>RTP_12345678</cim:IdentifiedObject.mRID>
+     <!-- RegularIntervalSchedule Instance -->
+    <cim:RegularIntervalSchedule rdf:ID="RIS_12345678">
+        <cim:IdentifiedObject.mRID>RIS_12345678</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>IntervalSchedule1</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>IntervalSchedule Alias</cim:IdentifiedObject.aliasName>
+        <cim:BasicIntervalSchedule.startTime>2023-12-21T13:45:00Z</cim:BasicIntervalSchedule.startTime>
+        <cim:BasicIntervalSchedule.value1Multiplier>k</cim:BasicIntervalSchedule.value1Multiplier>
+        <cim:BasicIntervalSchedule.value1Unit>VArh</cim:BasicIntervalSchedule.value1Unit>
+        <cim:BasicIntervalSchedule.value2Multiplier>m</cim:BasicIntervalSchedule.value2Multiplier>
+        <cim:BasicIntervalSchedule.value2Unit>V</cim:BasicIntervalSchedule.value2Unit>
+    </cim:RegularIntervalSchedule>
+
+    <cim:RegulationSchedule rdf:ID="RS_1">
+        <cim:IdentifiedObject.mRID>RS_1</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>RegSchedule1</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>RegSchedule Alias</cim:IdentifiedObject.aliasName>
+        <cim:BasicIntervalSchedule.startTime>2023-12-21T13:45:00Z</cim:BasicIntervalSchedule.startTime>
+        <cim:BasicIntervalSchedule.value1Multiplier>k</cim:BasicIntervalSchedule.value1Multiplier>
+        <cim:BasicIntervalSchedule.value1Unit>VArh</cim:BasicIntervalSchedule.value1Unit>
+        <cim:BasicIntervalSchedule.value2Multiplier>m</cim:BasicIntervalSchedule.value2Multiplier>
+        <cim:BasicIntervalSchedule.value2Unit>V</cim:BasicIntervalSchedule.value2Unit>
+    </cim:RegulationSchedule>
+
+     <!-- RegularTimePoint Instance 1 -->
+    <cim:RegularTimePoint rdf:ID="RTP_2">
+        <cim:IdentifiedObject.mRID>RTP_2</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>TimePoint1</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>TimePoint Alias</cim:IdentifiedObject.aliasName>
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>10.5</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>20.7</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>20.3</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RIS_12345678" />
     </cim:RegularTimePoint>
 
-    <!-- RegularTimePoint - Instance 2 -->
+    <!-- RegularTimePoint Instance 2 -->
     <cim:RegularTimePoint rdf:ID="RTP_87654321">
         <cim:IdentifiedObject.mRID>RTP_87654321</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>TimePoint2</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.aliasName>TimePoint Alias 2</cim:IdentifiedObject.aliasName>
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>15.2</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>25.9</cim:RegularTimePoint.value2>
-    </cim:RegularTimePoint>
-
-    <!-- RegularTimePoint - Instance 3 -->
-    <cim:RegularTimePoint rdf:ID="RTP_98765432">
-        <cim:IdentifiedObject.mRID>RTP_98765432</cim:IdentifiedObject.mRID>
-        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>18.3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>28.6</cim:RegularTimePoint.value2>
-    </cim:RegularTimePoint>
-
-    <!-- RegularTimePoint - Instance 4 -->
-    <cim:RegularTimePoint rdf:ID="RTP_23456789">
-        <cim:IdentifiedObject.mRID>RTP_23456789</cim:IdentifiedObject.mRID>
-        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>22.1</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>32.4</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>15.7</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>25.1</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
 
      <!-- Fuse Instance -->
@@ -217,4 +229,5 @@
         <cim:RegulatingControl.targetRange>8.0</cim:RegulatingControl.targetRange>
         <cim:RegulatingControl.targetValue>180.0</cim:RegulatingControl.targetValue>
     </cim:RegulatingControl>
+
 </rdf:RDF>
