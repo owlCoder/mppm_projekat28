@@ -91,8 +91,8 @@ namespace FTN.ESI.SIMES.CIM.CIMAdapter.Importer
             //// import all concrete model types (DMSType enum)
             ImportSeasons();
             ImportDayTypes();
-            ImportRegulationSchedules();
             ImportRegulatingControls();
+            ImportRegulationSchedules();
             ImportFuses();
             ImportDisconnectors();
             ImportRegularTimePoints();
