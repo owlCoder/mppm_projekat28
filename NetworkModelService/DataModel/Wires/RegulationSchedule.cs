@@ -75,7 +75,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             if (regulationControl != 0 && (refType != TypeOfReference.Reference || refType != TypeOfReference.Both))
             {
-                references[ModelCode.REG_SCHDL_REGCTRL] = new List<long> { regulationControl };
+                references[ModelCode.REG_SCHDL_REGCTRL] = new List<long>() { regulationControl };
             }
 
             base.GetReferences(references, refType);

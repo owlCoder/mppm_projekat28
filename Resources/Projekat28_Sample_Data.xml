@@ -87,7 +87,8 @@
         <cim:BasicIntervalSchedule.value1Unit>VArh</cim:BasicIntervalSchedule.value1Unit>
         <cim:BasicIntervalSchedule.value2Multiplier>m</cim:BasicIntervalSchedule.value2Multiplier>
         <cim:BasicIntervalSchedule.value2Unit>V</cim:BasicIntervalSchedule.value2Unit>
-        <!-- <cim:RegulatingControl rdf:resource="REGCONTROL_12345678" /> NE RADI?? -->
+        <cim:SeasonDayTypeSchedule.Season rdf:resource="S_12345678" />
+        <!-- <cim:RegulationSchedule.RegulatingControl rdf:resource="REGCONTROL_12345678" /> -->
     </cim:RegulationSchedule>
 
      <!-- RegularTimePoint Instance 1 -->

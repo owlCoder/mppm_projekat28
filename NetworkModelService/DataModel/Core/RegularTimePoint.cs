@@ -8,7 +8,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         private long sequenceNumber;
         private float value1;
         private float value2;
-        private long intervalSchedule;
+        private long intervalSchedule = 0;
 
         public RegularTimePoint(long globalId) : base(globalId) { }
 
