@@ -67,8 +67,8 @@
     </cim:DayType>
 
      <!-- RegularIntervalSchedule Instance -->
-    <cim:RegularIntervalSchedule rdf:ID="RIS_12345678">
-        <cim:IdentifiedObject.mRID>RIS_12345678</cim:IdentifiedObject.mRID>
+    <cim:RegularIntervalSchedule rdf:ID="RIS_2">
+        <cim:IdentifiedObject.mRID>RIS_2</cim:IdentifiedObject.mRID>
         <cim:IdentifiedObject.name>IntervalSchedule1</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.aliasName>IntervalSchedule Alias</cim:IdentifiedObject.aliasName>
         <cim:BasicIntervalSchedule.startTime>2023-12-21T13:45:00Z</cim:BasicIntervalSchedule.startTime>
@@ -110,6 +110,7 @@
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>15.7</cim:RegularTimePoint.value1>
         <cim:RegularTimePoint.value2>25.1</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RIS_2" />
     </cim:RegularTimePoint>
 
      <!-- Fuse Instance -->
