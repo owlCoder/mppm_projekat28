@@ -199,7 +199,7 @@
     </cim:Fuse>
     <!-- ================================================================================= -->
 
-    <!-- ======================================== FUSE =================================== -->
+    <!-- ================================ REGULAR TIME POINT ============================= -->
     <cim:RegularTimePoint rdf:ID="RTP_0">
         <cim:IdentifiedObject.mRID>RTP_0</cim:IdentifiedObject.mRID>
         <cim:IdentifiedObject.name>TimePoint1</cim:IdentifiedObject.name>
@@ -207,7 +207,7 @@
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>10.5</cim:RegularTimePoint.value1>
         <cim:RegularTimePoint.value2>20.3</cim:RegularTimePoint.value2>
-        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RG_1" />
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RS_0" />
     </cim:RegularTimePoint>
 
     <cim:RegularTimePoint rdf:ID="RTP_1">
@@ -217,7 +217,7 @@
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>15.7</cim:RegularTimePoint.value1>
         <cim:RegularTimePoint.value2>25.1</cim:RegularTimePoint.value2>
-        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RG_0" />
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="RS_1" />
     </cim:RegularTimePoint>
     <!-- ================================================================================= -->
 
