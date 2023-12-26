@@ -40,6 +40,8 @@ namespace MVVM3.ViewModel
             ClearProperties = new MyICommand(ClearPropertiesCollection);
             ResetAll = new MyICommand(ResetAllForm);
             GetExtentValuesCriteria = new MyICommand(GetValuesFromNMSCriteria);
+
+            ResetAllForm();
         }
 
         private void ClearPropertiesCollection()
