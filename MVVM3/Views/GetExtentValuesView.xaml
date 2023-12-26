@@ -60,13 +60,13 @@
                             <TreeView ItemsSource="{Binding ListedEntities}" FontSize="14" FontWeight="Regular">
                                 <TreeView.ItemTemplate>
                                     <HierarchicalDataTemplate ItemsSource="{Binding Properties}">
-                                        <TextBlock Text="{Binding ParentElementName}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding ParentElementName}" Foreground="DarkCyan" Background="White" FontWeight="SemiBold" />
                                         <HierarchicalDataTemplate.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="{Binding ModelCode}" />
                                                     <TextBlock Text=" - " />
-                                                    <TextBlock Text="{Binding Value}" />
+                                                    <TextBlock Text="{Binding Value}" FontWeight="SemiBold" />
                                                 </StackPanel>
                                             </DataTemplate>
                                         </HierarchicalDataTemplate.ItemTemplate>

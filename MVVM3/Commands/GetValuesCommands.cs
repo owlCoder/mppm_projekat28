@@ -84,7 +84,6 @@ namespace MVVM3.Commands
                         case PropertyType.Float:
                             data.Add(new PropertyView(Properties[i].Id, Properties[i].AsFloat().ToString()));
                             break;
-                        case PropertyType.Bool:
                         case PropertyType.Byte:
                         case PropertyType.Int32:
                         case PropertyType.Int64:
@@ -93,6 +92,9 @@ namespace MVVM3.Commands
                                 data.Add(new PropertyView(Properties[i].Id, Properties[i].AsLong().ToString()));
                             else
                                 data.Add(new PropertyView(Properties[i].Id, Properties[i].AsLong().ToString()));
+                            break;
+                        case PropertyType.Bool:
+                            data.Add(new PropertyView(Properties[i].Id, Properties[i].AsBool() ? "✓" : "X"));
                             break;
                         case PropertyType.DateTime:
                                 data.Add(new PropertyView(Properties[i].Id, Properties[i].AsDateTime().ToString()));
@@ -111,9 +113,9 @@ namespace MVVM3.Commands
                             data.Add(new PropertyView(Properties[i].Id, Properties[i].AsReference().ToString()));
                             break;
                         case PropertyType.String:
-                            if (Properties[i].PropertyValue.StringValue == null)
+                            if (Properties[i].PropertyValue.StringValue == null || Properties[i].PropertyValue.StringValue == "")
                             {
-                                Properties[i].PropertyValue.StringValue = String.Empty;
+                                Properties[i].PropertyValue.StringValue = " ";
                             }
                             data.Add(new PropertyView(Properties[i].Id, Properties[i].AsString().ToString()));
                             break;

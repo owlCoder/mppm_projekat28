@@ -29,7 +29,7 @@ namespace MVVM3.Commands
         public ObservableCollection<PropertiesView> GetExtentValues(DMSType dmsModelCode, List<ModelCode> props)
         {
             Messenger.Default.Send(new StatusMessage("Getting extent values method started", "CadetBlue"));
-            
+
             int iteratorId = 0;
             List<long> ids = new List<long>();
             ObservableCollection<PropertiesView> data = new ObservableCollection<PropertiesView>();
@@ -59,32 +59,11 @@ namespace MVVM3.Commands
 
                 Proxy.IteratorClose(iteratorId);
 
-                foreach(long gid in  ids)
+                foreach (long gid in ids)
                 {
-                    PropertiesView currentLoad = new PropertiesView() { ParentElementName = modelCode };
-                    ResourceDescription rd = Proxy.GetValues(gid, props);
 
-                    foreach (Property p in rd.Properties)
-                    {
-                        if (p.Type == PropertyType.ReferenceVector)
-                        {
-                            if (p.AsReferences().Count == 0)
-                            {
-                                currentLoad.Properties.Add(new PropertyView(p.Id, "Not referenced"));
-                            }
-                            else
-                            {
-                                currentLoad.Properties.Add(new PropertyView(p.Id, "Referenced to other entities"));
-                            }
-                        }
-                        else
-                        {
-                            currentLoad.Properties.Add(new PropertyView(p.Id, p.ToString()));
-                        }
-                    }
-
-                    // add current class into collection of loads
-                    data.Add(currentLoad);
+                    List<PropertyView> entity = new GetValuesCommands().GetValues(gid, props).ToList();
+                    data.Add(new PropertiesView() { ParentElementName = modelCode, Properties = entity });
                 }
 
                 Messenger.Default.Send(new StatusMessage("Getting extent values for " + modelCode + " method successfully finished. Fetched " + ids.Count + " samples.", "SeaGreen"));
