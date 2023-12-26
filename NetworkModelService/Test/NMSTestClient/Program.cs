@@ -231,7 +231,7 @@ namespace FTN.Services.NetworkModelService.TestClient
 
                 association.PropertyId = modelCode;
 
-                Console.Write("Enter type: ");
+                Console.Write("Enter type model code: ");
 
                 userModelCode = Console.ReadLine();
                 modelCode = 0;
