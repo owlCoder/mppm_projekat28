@@ -28,7 +28,7 @@ namespace MVVM3.Commands
         // Method to get by all elements by model code
         public ObservableCollection<PropertiesView> GetExtentValues(DMSType dmsModelCode, List<ModelCode> props)
         {
-            Messenger.Default.Send(new StatusMessage("Getting extent values method started", "CadetBlue"));
+            Messenger.Default.Send(new StatusMessage("Getting extent values method started", "SteelBlue"));
 
             int iteratorId = 0;
             List<long> ids = new List<long>();
@@ -71,7 +71,7 @@ namespace MVVM3.Commands
             }
             catch (Exception)
             {
-                Messenger.Default.Send(new StatusMessage("Service can't fetch extent values right now!", "Crimson"));
+                Messenger.Default.Send(new StatusMessage("Service can't fetch extent values right now!", "Firebrick"));
             }
 
             return data;

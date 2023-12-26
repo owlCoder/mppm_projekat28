@@ -12,7 +12,7 @@ namespace MVVM3.ViewModel
         public MyICommand<string> NavCommand { get; private set; }
 
         private string statusMessage = "GDA Client is ready. All systems are operative!";
-        private string backgroundColor = "CadetBlue";
+        private string backgroundColor = "SteelBlue";
 
         /// View Models
         public HomeViewModel homeViewModel;
@@ -88,6 +88,7 @@ namespace MVVM3.ViewModel
             switch (destination)
             {
                 case "home":
+                    Messenger.Default.Send(new StatusMessage("Welcome to GDA Client - All services are operating normally.", "SteelBlue"));
                     CurrentViewModel = homeViewModel;
                     break;
                 case "get":

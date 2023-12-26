@@ -68,6 +68,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\GetExtentValuesCommands.cs" />
     <Compile Include="Commands\GetValuesCommands.cs" />
+    <Compile Include="Commands\ImportApplyRemoveDataCommands.cs" />
     <Compile Include="Model\PropertiesView.cs" />
     <Compile Include="Model\PropertyView.cs" />
     <Compile Include="Model\StatusMessage.cs" />
@@ -151,6 +152,10 @@
     <Resource Include="Assets\close.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CIMAdapter\CIMAdapter.csproj">
+      <Project>{F680D34F-C148-4314-8914-B2DF3E7B17AF}</Project>
+      <Name>CIMAdapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{892cbe15-9ed7-4540-81fa-0eaaba592138}</Project>
       <Name>Common</Name>

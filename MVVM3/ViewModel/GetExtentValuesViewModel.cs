@@ -59,16 +59,16 @@ namespace MVVM3.ViewModel
         {
             if (SelectedType == DMSType.MASK_TYPE)
             {
-                Messenger.Default.Send(new StatusMessage("You didn't choose a DMS type!", "Crimson"));
+                Messenger.Default.Send(new StatusMessage("You didn't choose a DMS type!", "Firebrick"));
                 return;
             }
             if (SelectedModels.Count == 0)
             {
-                Messenger.Default.Send(new StatusMessage("You must choose atleast one property!", "Crimson"));
+                Messenger.Default.Send(new StatusMessage("You must choose atleast one property!", "Firebrick"));
                 return;
             }
 
-            Messenger.Default.Send(new StatusMessage("Executing query. Please wait...", "CadetBlue"));
+            Messenger.Default.Send(new StatusMessage("Executing query. Please wait...", "SteelBlue"));
             ListedEntities = commands.GetExtentValues(SelectedType, SelectedModels.ToList());
         }
 
