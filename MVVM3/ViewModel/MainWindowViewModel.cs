@@ -31,6 +31,7 @@ namespace MVVM3.ViewModel
             getValuesViewModel = new GetValuesViewModel();
             homeViewModel = new HomeViewModel();
             getExtentViewModel = new GetExtentValuesViewModel();
+            getRelatedValuesViewModel = new GetRelatedValuesViewModel();
             CurrentViewModel = homeViewModel;
 
             // Register method to show message on status bar
