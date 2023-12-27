@@ -49,7 +49,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (property)
             {
-                case ModelCode.SEASON_START_DATE:
+                case ModelCode.BASICINTSCH_STIME:
                 case ModelCode.BASICINTSCH_VAL1_MUL:
                 case ModelCode.BASICINTSCH_VAL1_UNT:
                 case ModelCode.BASICINTSCH_VAL2_MUL:
