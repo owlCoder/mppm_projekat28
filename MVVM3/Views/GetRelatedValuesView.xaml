@@ -65,7 +65,7 @@
                     <Border BorderBrush="SteelBlue" BorderThickness="0.5" CornerRadius="5">
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
                   Height="550">
-                            <TreeView ItemsSource="{Binding ListedEntities}" FontSize="14" FontWeight="Regular">
+                            <TreeView ItemsSource="{Binding ListedProperties}" FontSize="14" FontWeight="Regular">
                                 <TreeView.ItemTemplate>
                                     <HierarchicalDataTemplate ItemsSource="{Binding Properties}">
                                         <TextBlock Text="{Binding ParentElementName}" Foreground="SteelBlue" Background="White" FontWeight="SemiBold" />

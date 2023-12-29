@@ -21,7 +21,7 @@ namespace MVVM3.ViewModel
         private List<DMSType> types = new List<DMSType>();
         private ObservableCollection<long> gids = new ObservableCollection<long>();
         private ObservableCollection<ModelCode> typeModelCodes = new ObservableCollection<ModelCode>();
-        private ObservableCollection<PropertyView> listedProperties = new ObservableCollection<PropertyView>();
+        private ObservableCollection<PropertiesView> listedProperties = new ObservableCollection<PropertiesView>();
         private ObservableCollection<ModelCode> properties = new ObservableCollection<ModelCode>();
 
         private ObservableCollection<ModelCode> references = new ObservableCollection<ModelCode>();
@@ -80,7 +80,8 @@ namespace MVVM3.ViewModel
             }
 
             Messenger.Default.Send(new StatusMessage("Executing query. Please wait...", "SteelBlue"));
-            //ListedProperties = commands.GetValues(selectedGid, SelectedModels.ToList());
+            Association association = new Association() { PropertyId = SelectedReferenceModelCode, Type = 0 };
+            ListedProperties = commands.GetRelatedValues(selectedGid, SelectedModels.ToList(), association, selectedReference);
         }
 
         private void ClearPropertiesCollection()
@@ -250,7 +251,7 @@ namespace MVVM3.ViewModel
             }
         }
 
-        public ObservableCollection<PropertyView> ListedProperties
+        public ObservableCollection<PropertiesView> ListedProperties
         {
             get => listedProperties;
             set

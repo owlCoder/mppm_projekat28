@@ -23,9 +23,6 @@ namespace MVVM3.Commands
             get { return ProxyConnector.Instance.GetProxy(); }
         }
 
-
-
-        // Method to get by all elements by model code
         public ObservableCollection<PropertiesView> GetExtentValues(DMSType dmsModelCode, List<ModelCode> props)
         {
             Messenger.Default.Send(new StatusMessage("Getting extent values method started", "SteelBlue"));
@@ -40,9 +37,9 @@ namespace MVVM3.Commands
                 int numberOfResources = 2;
                 int resourcesLeft = 0;
 
-                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(modelCode);
+                // List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIds(modelCode);
 
-                iteratorId = Proxy.GetExtentValues(modelCode, properties);
+                iteratorId = Proxy.GetExtentValues(modelCode, props);
                 resourcesLeft = Proxy.IteratorResourcesLeft(iteratorId);
 
                 while (resourcesLeft > 0)
