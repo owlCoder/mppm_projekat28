@@ -3,6 +3,7 @@ using MVVM3.Commands;
 using MVVM3.Helpers;
 using MVVM3.Model;
 using MVVMLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,15 +16,16 @@ namespace MVVM3.ViewModel
         public MyICommand ClearProperties { get; set; }
         public MyICommand ResetAll { get; set; }
         public MyICommand GetValuesCriteria { get; set; }
-        private GetValuesCommands commands = new GetValuesCommands();
+        private GetRelatedValuesCommands commands = new GetRelatedValuesCommands();
 
         private List<DMSType> types = new List<DMSType>();
         private ObservableCollection<long> gids = new ObservableCollection<long>();
-        private ObservableCollection<ModelCode> properties = new ObservableCollection<ModelCode>();
+        private ObservableCollection<ModelCode> typeModelCodes = new ObservableCollection<ModelCode>();
         private ObservableCollection<PropertyView> listedProperties = new ObservableCollection<PropertyView>();
 
         private ObservableCollection<ModelCode> references = new ObservableCollection<ModelCode>();
         private ModelCode selectedReference;
+        private ModelCode selectedTypeModelCode;
 
         private DMSType selectedType;
         private long selectedGid = -1;
@@ -45,7 +47,7 @@ namespace MVVM3.ViewModel
 
             ClearProperties = new MyICommand(ClearPropertiesCollection);
             ResetAll = new MyICommand(ResetAllForm);
-            // GetValuesCriteria = new MyICommand(GetValuesFromNMSCriteria);
+            //GetValuesCriteria = new MyICommand(GetValuesFromNMSCriteria);
 
             ResetAllForm();
         }
@@ -62,16 +64,38 @@ namespace MVVM3.ViewModel
             SelectedGid = -1;
             ListedProperties.Clear();
             References.Clear();
+            TypeModelCodes.Clear();
             References = GetReferences();
+            SelectedTypeModelCode = 0;
             Messenger.Default.Send(new StatusMessage("Criteria has been resetted.", "SteelBlue"));
+        }
+
+        private ObservableCollection<ModelCode> GetConcreteClassesModelCodes()
+        {
+            if(SelectedTypeModelCode == 0)
+            {
+                return new ObservableCollection<ModelCode>();
+            }
+
+            ObservableCollection<ModelCode> availableTypeModelCodes = new ObservableCollection<ModelCode>() { };
+
+            List<ModelCode> selected_refs = new List<ModelCode>(References);
+
+            foreach(ModelCode reference in selected_refs)
+            {
+                availableTypeModelCodes.Add(MainWindowViewModel.modelResourcesDesc.GetModelCodeFromModelCodeName(reference.ToString().Split('_')[1]));
+            }
+
+            return availableTypeModelCodes;
         }
 
         private ObservableCollection<ModelCode> GetReferences()
         {
             ObservableCollection<ModelCode> references = new ObservableCollection<ModelCode>();
-            foreach (var mc in Properties)
+            
+            foreach (var mc in MainWindowViewModel.modelResourcesDesc.GetAllPropertyIds(SelectedType))
             {
-                if ( (((long)mc & 0x0000000000000009) == 0x0000000000000009) 
+                if ((((long)mc & 0x0000000000000009) == 0x0000000000000009)
                     || ((long)mc & 0x0000000000000019) == 0x0000000000000019)
                 {
                     references.Add(mc);
@@ -88,6 +112,8 @@ namespace MVVM3.ViewModel
                 if (selectedReference != value)
                 {
                     selectedReference = value;
+                    TypeModelCodes.Clear();
+                    TypeModelCodes = GetConcreteClassesModelCodes();
                     OnPropertyChanged("SelectedReferenceModelCode");
                 }
             }
@@ -106,6 +132,18 @@ namespace MVVM3.ViewModel
             }
         }
 
+        public ModelCode SelectedTypeModelCode
+        {
+            get => selectedTypeModelCode;
+            set
+            {
+                if (value != selectedTypeModelCode)
+                {
+                    selectedTypeModelCode = value;
+                    OnPropertyChanged("SelectedTypeModelCode");
+                }
+            }
+        }
 
         public ObservableCollection<PropertyView> ListedProperties
         {
@@ -167,7 +205,7 @@ namespace MVVM3.ViewModel
                     {
                         Gids.Clear();
                         Gids = commands.GetGIDs(selectedType);
-                        Properties = new ObservableCollection<ModelCode>(
+                        TypeModelCodes = new ObservableCollection<ModelCode>(
                             MainWindowViewModel.modelResourcesDesc.GetAllPropertyIds(SelectedType));
                         SelectedModels.Clear();
                         SelectedGid = -1;
@@ -217,15 +255,15 @@ namespace MVVM3.ViewModel
             }
         }
 
-        public ObservableCollection<ModelCode> Properties
+        public ObservableCollection<ModelCode> TypeModelCodes
         {
-            get => properties;
+            get => typeModelCodes;
             set
             {
-                if (properties != value)
+                if (typeModelCodes != value)
                 {
-                    properties = value;
-                    OnPropertyChanged("Properties");
+                    typeModelCodes = value;
+                    OnPropertyChanged("TypeModelCodes");
                 }
             }
         }

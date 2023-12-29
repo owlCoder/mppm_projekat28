@@ -51,7 +51,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
                 case ModelCode.REGCTRL_MONITPHASE:
                 case ModelCode.REGCTRL_TARGRANGE:
                 case ModelCode.REGCTRL_TARG_VALUE:
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REGCTRL_REGSCHDL:
                     return true;
 
                 default:
@@ -78,7 +78,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
                 case ModelCode.REGCTRL_TARG_VALUE:
                     prop.SetValue(targetValue);
                     break;
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REGCTRL_REGSCHDL:
                     prop.SetValue(regulationSchedules);
                     break;
 
@@ -130,7 +130,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             if (regulationSchedules != null && regulationSchedules.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
             {
-                references[ModelCode.REGCTRL_REG_SCHDL] = regulationSchedules.GetRange(0, regulationSchedules.Count);
+                references[ModelCode.REGCTRL_REGSCHDL] = regulationSchedules.GetRange(0, regulationSchedules.Count);
             }
 
             base.GetReferences(references, refType);
@@ -140,7 +140,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (referenceId)
             {
-                case ModelCode.REG_SCHDL_REGCTRL:
+                case ModelCode.REGSCHDL_REGCTRL:
                     regulationSchedules.Add(globalId);
                     break;
 
@@ -154,7 +154,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (referenceId)
             {
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REGCTRL_REGSCHDL:
 
                     if (regulationSchedules.Contains(globalId))
                     {

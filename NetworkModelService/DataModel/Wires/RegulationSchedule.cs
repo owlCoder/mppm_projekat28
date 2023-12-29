@@ -35,7 +35,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (t)
             {
-                case ModelCode.REG_SCHDL_REGCTRL:
+                case ModelCode.REGSCHDL_REGCTRL:
                     return true;
 
                 default:
@@ -47,7 +47,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (prop.Id)
             {
-                case ModelCode.REG_SCHDL_REGCTRL:
+                case ModelCode.REGSCHDL_REGCTRL:
                     prop.SetValue(regulationControl);
                     break;
 
@@ -61,7 +61,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             switch (property.Id)
             {
-                case ModelCode.REG_SCHDL_REGCTRL:
+                case ModelCode.REGSCHDL_REGCTRL:
                     regulationControl = property.AsReference();
                     break;
 
@@ -75,7 +75,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
         {
             if (regulationControl != 0 && (refType != TypeOfReference.Reference || refType != TypeOfReference.Both))
             {
-                references[ModelCode.REG_SCHDL_REGCTRL] = new List<long>() { regulationControl };
+                references[ModelCode.REGSCHDL_REGCTRL] = new List<long>() { regulationControl };
             }
 
             base.GetReferences(references, refType);

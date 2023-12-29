@@ -866,7 +866,7 @@ namespace FTN.Common
             typeIdsInInsertOrder.Add(ModelCode.SEASON);
             typeIdsInInsertOrder.Add(ModelCode.DAYTYPE);
             typeIdsInInsertOrder.Add(ModelCode.REGCTRL);
-            typeIdsInInsertOrder.Add(ModelCode.REG_SCHDL);
+            typeIdsInInsertOrder.Add(ModelCode.REGSCHDL);
             typeIdsInInsertOrder.Add(ModelCode.FUSE);
             typeIdsInInsertOrder.Add(ModelCode.DISCONNECTOR);
             typeIdsInInsertOrder.Add(ModelCode.REGTIMEPNT);
@@ -875,9 +875,9 @@ namespace FTN.Common
         private void InitializeNotSettablePropertyIds()
         {
             notSettablePropertyIds.Add(ModelCode.IDOBJ_GID);
-            notSettablePropertyIds.Add(ModelCode.SEASON_SDTSCHDLS);
-            notSettablePropertyIds.Add(ModelCode.DAYTYPE_SDTSCHDLS);
-            notSettablePropertyIds.Add(ModelCode.REGCTRL_REG_SCHDL);
+            notSettablePropertyIds.Add(ModelCode.SEASON_SEASONDTSCHDL);
+            notSettablePropertyIds.Add(ModelCode.DAYTYPE_SEASONDTSCHDL);
+            notSettablePropertyIds.Add(ModelCode.REGCTRL_REGSCHDL);
         }
 
         #endregion Initialization of metadata

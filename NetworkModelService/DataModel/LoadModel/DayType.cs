@@ -33,7 +33,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             switch (t)
             {
-                case ModelCode.DAYTYPE_SDTSCHDLS:
+                case ModelCode.DAYTYPE_SEASONDTSCHDL:
                     return true;
 
                 default:
@@ -45,7 +45,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             switch (prop.Id)
             {
-                case ModelCode.DAYTYPE_SDTSCHDLS:
+                case ModelCode.DAYTYPE_SEASONDTSCHDL:
                     prop.SetValue(seasonDayTypeSchedules);
                     break;
 
@@ -72,7 +72,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             if (seasonDayTypeSchedules != null && seasonDayTypeSchedules.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
             {
-                references[ModelCode.DAYTYPE_SDTSCHDLS] = seasonDayTypeSchedules.GetRange(0, seasonDayTypeSchedules.Count);
+                references[ModelCode.DAYTYPE_SEASONDTSCHDL] = seasonDayTypeSchedules.GetRange(0, seasonDayTypeSchedules.Count);
             }
 
             base.GetReferences(references, refType);
@@ -96,7 +96,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             switch (referenceId)
             {
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REGCTRL_REGSCHDL:
 
                     if (seasonDayTypeSchedules.Contains(globalId))
                     {

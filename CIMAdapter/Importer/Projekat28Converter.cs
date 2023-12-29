@@ -51,7 +51,7 @@
                         report.Report.Append("WARNING: Convert ").Append(cim.GetType().ToString()).Append(" rdfID = \"").Append(cim.ID);
                         report.Report.Append("\" - Failed to set reference to RegularTimePoint: rdfID \"").Append(cim.IntervalSchedule.ID).AppendLine(" \" is not mapped to GID!");
                     }
-                    rd.AddProperty(new Property(ModelCode.REGTIMEPNT_INT_SCHDL, gid));
+                    rd.AddProperty(new Property(ModelCode.REGTIMEPNT_RISCHDL, gid));
                 }
             }
         }
@@ -137,7 +137,7 @@
                         report.Report.Append("WARNING: Convert ").Append(cim.GetType().ToString()).Append(" rdfID = \"").Append(cim.ID);
                         report.Report.Append("\" - Failed to set reference to RegulatingControl: rdfID \"").Append(cim.RegulatingControl.ID).AppendLine(" \" is not mapped to GID!");
                     }
-                    rd.AddProperty(new Property(ModelCode.REG_SCHDL_REGCTRL, gid));
+                    rd.AddProperty(new Property(ModelCode.REGSCHDL_REGCTRL, gid));
                 }
             }
 

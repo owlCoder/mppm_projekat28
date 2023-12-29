@@ -10,7 +10,7 @@ namespace FTN.Services.NetworkModelService
         {
             try
             {
-                string message = "Starting Network Model Serivice...";
+                string message = "Starting Network Model Service...";
                 CommonTrace.WriteTrace(CommonTrace.TraceInfo, message);
                 Console.WriteLine("\n{0}\n", message);
 

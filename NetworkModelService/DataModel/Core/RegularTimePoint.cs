@@ -44,7 +44,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
                 case ModelCode.REGTIMEPNT_SEQ_NUM:
                 case ModelCode.REGTIMEPNT_VALUE1:
                 case ModelCode.REGTIMEPNT_VALUE2:
-                case ModelCode.REGTIMEPNT_INT_SCHDL:
+                case ModelCode.REGTIMEPNT_RISCHDL:
                     return true;
 
                 default:
@@ -65,7 +65,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
                 case ModelCode.REGTIMEPNT_VALUE2:
                     prop.SetValue(value2);
                     break;
-                case ModelCode.REGTIMEPNT_INT_SCHDL:
+                case ModelCode.REGTIMEPNT_RISCHDL:
                     prop.SetValue(intervalSchedule);
                     break;
 
@@ -91,7 +91,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
                     value2 = property.AsFloat();
                     break;
 
-                case ModelCode.REGTIMEPNT_INT_SCHDL:
+                case ModelCode.REGTIMEPNT_RISCHDL:
                     intervalSchedule = property.AsReference();
                     break;
 
@@ -105,7 +105,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             if (intervalSchedule != 0 && (refType != TypeOfReference.Reference || refType != TypeOfReference.Both))
             {
-                references[ModelCode.REGTIMEPNT_INT_SCHDL] = new List<long> { intervalSchedule };
+                references[ModelCode.REGTIMEPNT_RISCHDL] = new List<long> { intervalSchedule };
             }
 
             base.GetReferences(references, refType);

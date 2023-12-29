@@ -33,7 +33,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (t)
             {
-                case ModelCode.REGINTSCHDL_TPOINTS:
+                case ModelCode.RISCHDL_REGTIMEPNT:
                     return true;
 
                 default:
@@ -45,7 +45,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (prop.Id)
             {
-                case ModelCode.REGINTSCHDL_TPOINTS:
+                case ModelCode.RISCHDL_REGTIMEPNT:
                     prop.SetValue(TimePoints);
                     break;
 
@@ -72,7 +72,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             if (timePoints != null && timePoints.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
             {
-                references[ModelCode.REGINTSCHDL_TPOINTS] = timePoints.GetRange(0, timePoints.Count);
+                references[ModelCode.RISCHDL_REGTIMEPNT] = timePoints.GetRange(0, timePoints.Count);
             }
 
             base.GetReferences(references, refType);
@@ -82,7 +82,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (referenceId)
             {
-                case ModelCode.REGTIMEPNT_INT_SCHDL:
+                case ModelCode.REGTIMEPNT_RISCHDL:
                     timePoints.Add(globalId);
                     break;
 
@@ -96,7 +96,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
         {
             switch (referenceId)
             {
-                case ModelCode.REGCTRL_REG_SCHDL:
+                case ModelCode.REGCTRL_REGSCHDL:
 
                     if (timePoints.Contains(globalId))
                     {

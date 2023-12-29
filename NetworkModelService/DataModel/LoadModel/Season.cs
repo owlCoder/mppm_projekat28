@@ -42,7 +42,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
             {
                 case ModelCode.SEASON_START_DATE:
                 case ModelCode.SEASON_END_DATE:
-                case ModelCode.SEASON_SDTSCHDLS:
+                case ModelCode.SEASON_SEASONDTSCHDL:
                     return true;
 
                 default:
@@ -60,7 +60,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
                 case ModelCode.SEASON_END_DATE:
                     prop.SetValue(endDate);
                     break;
-                case ModelCode.SEASON_SDTSCHDLS:
+                case ModelCode.SEASON_SEASONDTSCHDL:
                     prop.SetValue(seasonDayTypeSchedules);
                     break;
 
@@ -100,7 +100,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             if (seasonDayTypeSchedules != null && seasonDayTypeSchedules.Count > 0 && (refType == TypeOfReference.Target || refType == TypeOfReference.Both))
             {
-                references[ModelCode.SEASON_SDTSCHDLS] = seasonDayTypeSchedules.GetRange(0, seasonDayTypeSchedules.Count);
+                references[ModelCode.SEASON_SEASONDTSCHDL] = seasonDayTypeSchedules.GetRange(0, seasonDayTypeSchedules.Count);
             }
 
             base.GetReferences(references, refType);
@@ -124,7 +124,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
         {
             switch (referenceId)
             {
-                case ModelCode.SEASON_SDTSCHDLS:
+                case ModelCode.SEASON_SEASONDTSCHDL:
 
                     if (seasonDayTypeSchedules.Contains(globalId))
                     {
