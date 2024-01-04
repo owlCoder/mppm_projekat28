@@ -201,6 +201,7 @@ namespace MVVM3.ViewModel
                     selectedReference = value;
                     TypeModelCodes.Clear();
                     TypeModelCodes = GetConcreteClassesModelCodes();
+                    SelectedModels.Clear();
 
                     try
                     {
