@@ -19,6 +19,8 @@ namespace FTN.Common
     [Flags]
     public enum ModelCode : long
     {
+        ALL_REFERENCES       = 0x0000000000000000,
+
         IDOBJ                = 0x1000000000000000,
         IDOBJ_GID            = 0x1000000000000104,
         IDOBJ_ALIASNAME      = 0x1000000000000207,

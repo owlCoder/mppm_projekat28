@@ -7,7 +7,7 @@
 	xmlns:local="clr-namespace:MVVM3"
 	xmlns:views="clr-namespace:MVVM3.Views"
 	xmlns:viewModel="clr-namespace:MVVM3.ViewModel" mc:Ignorable="d" 
-        Name="MainWindowRef" Title="GDA Client" WindowStyle="None" Height="735"  
+        Name="MainWindowRef" Title="GDA Client" WindowStyle="None" Height="760"  
         ResizeMode="NoResize"
         Background="White" Width="1000" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
